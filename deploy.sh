@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker build -t erictung1999/client:latest -t erictung1999/client:$SHA -f ./client/Dockerfile ./client/
 docker build -t erictung1999/server:latest -t erictung1999/server:$SHA -f ./server/Dockerfile ./server/
 docker build -t erictung1999/worker:latest -t erictung1999/worker:$SHA -f ./worker/Dockerfile ./worker/
