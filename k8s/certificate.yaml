@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+    name: kubetest-domain-tls
+spec:
+    secretName: kubetest-domain
+    issuerRef:
+        name: letsencrypt-prod
+        kind: ClusterIssuer
+    commonName: erictung.tech
+    dnsNames:
+        -   kubetest.erictung.tech
+    acme:
+        config:
+            -   http01:
+                    ingressClass: nginx
+                domains:
+                    -   kubetest.erictung.tech
